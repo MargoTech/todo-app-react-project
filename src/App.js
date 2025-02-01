@@ -1,7 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
 
 function App() {
+  const [tasks, setTasks] = useState([]);
+  const [taskInput, setTaskInput] = useState("");
+
   return (
     <div className="App">
       <header className="App-header">
