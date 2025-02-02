@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Ap";
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -19,17 +20,18 @@ function App() {
   return (
     <div>
       <h1>ToDo List</h1>
-      <input>
-        type="text" value={inputValue}
+      <input
+        type="text"
+        value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
-        placeholder="enter the task"
-      </input>
+        placeholder="Enter the task"
+      />
       <button onClick={addTask}>Add</button>
 
       <ul>
-        {tasks.map((tasks) => (
-          <li key={tasks.id}>
-            {tasks.text}
+        {tasks.map((task) => (
+          <li key={task.id}>
+            {task.text}
             <button onClick={() => deleteTask(task.id)}>Delete task</button>
           </li>
         ))}
