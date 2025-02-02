@@ -12,6 +12,10 @@ function App() {
     }
   };
 
+  const deleteTask = (id) => {
+    setTasks(tasks.filter((task) => task.id !== id));
+  };
+
   return (
     <div>
       <h1>ToDo List</h1>
@@ -24,7 +28,10 @@ function App() {
 
       <ul>
         {tasks.map((tasks) => (
-          <li key={tasks.id}>{tasks.text}</li>
+          <li key={tasks.id}>
+            {tasks.text}
+            <button onClick={() => deleteTask(task.id)}>Delete task</button>
+          </li>
         ))}
       </ul>
     </div>
